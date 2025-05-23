@@ -59,7 +59,7 @@ order by max_salary desc
 */
 select first_name 이름,
 	   salary 월급,
-       commission_pct is null = 0 커미션퍼센트
+       commission_pct
 from employees
 where salary >=10000 and salary < 14000
 order by salary desc
