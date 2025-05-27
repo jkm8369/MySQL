@@ -77,6 +77,7 @@ select first_name 이름,
        department_id 부서번호
 from employees
 where department_id in(10, 90, 100)
+order by department_id asc
 ;
 
 /*
