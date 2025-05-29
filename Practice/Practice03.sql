@@ -77,19 +77,7 @@ where l.location_id = d.location_id
 지역(regions)에 속한 나라들을 지역이름(region_name), 나라이름(country_name)으로 출력하되 지역이름(오름차순), 나라이름(내림차순) 으로 정렬하세요.
 (25건)
 */
-select region_name 지역이름
-from regions r
-left outer join countries c
-			 on r.region_id = c.region_id
-order by region_name asc
 
-union
-select country_name 나라이름
-from  regions r
-right outer join countries c 
-			  on r.region_id = c.region_id
-order by country_name desc
-;
 
 
 
