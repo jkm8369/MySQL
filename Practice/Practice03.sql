@@ -77,10 +77,19 @@ where l.location_id = d.location_id
 지역(regions)에 속한 나라들을 지역이름(region_name), 나라이름(country_name)으로 출력하되 지역이름(오름차순), 나라이름(내림차순) 으로 정렬하세요.
 (25건)
 */
+select region_name,
+	   country_name
+from regions r, countries c
+where r.region_id = c.region_id
+order by r.region_name, c.country_name desc
+;
 
-
-
-
+/*
+문제5.
+자신의 매니저보다 채용일(hire_date)이 빠른 사원의 
+사번(employee_id), 이름(first_name)과 채용일(hire_date), 매니저이름(first_name), 매니저입사일(hire_date)을 조회하세요.
+(37건)
+*/
 
 
 
