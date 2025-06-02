@@ -186,8 +186,18 @@ and e.salary > s.avgSalary
 group by e.employee_id, e.first_name, e.salary, e.department_id
 ;
 
-
-
+/*
+문제8.
+직원 입사일이 11번째에서 15번째의 직원의 사번, 이름, 월급, 입사일을 입사일 순서로 출력하세요
+*/
+select employee_id,
+	   first_name,
+	   salary,
+       hire_date
+from employees
+order by hire_date asc
+limit 10, 5
+;
 
 
 
