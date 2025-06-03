@@ -60,7 +60,7 @@ use web_db;
 
 -- -------------------------------------
 -- #권한부여
--- 'web'@'%' 계정이 web_db (데이터베이스)의 모든 테이블에 모든 권한 부여
+-- web_db 데이타베이스의 모든 테이블에 'web'@'%' 사용자에게 모든 권한 부여
 grant all privileges on web_db.* to 'web'@'%';
 flush privileges;
 
