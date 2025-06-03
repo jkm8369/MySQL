@@ -76,6 +76,7 @@ from book b, author a
 where b.author_id = a.author_id
 ;
 
+-- 전체조회(실전코드)    컬럼명을 모두 명확하게 표기해준다  * 사용하지 않는다
 select b.book_id,
 	   b.title,
        b.pubs,

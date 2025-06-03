@@ -72,14 +72,40 @@ order by salary desc
 */
 -- 매니저아이디 별 평균월급
 select  manager_id,
-		avg(salary)
+		avg(salary) avgSalary
 from employees
 group by manager_id
 ;
 
-select *
-from employees m, employees e
-where m.manager_id = e.employee_id
+select d.manager_id,
+	   d.first_name,
+       
+from employees e, departments d
+where e.department_id = d.department_id
+and salary > (select  manager_id,
+					 avg(salary) avgSalary
+			 from employees
+			 group by manager_id)
 and hire_date between '2005/01/01' and '2005/12/31'
 ;
+
+/*
+문제4.
+각 사원(employee)에 대해서 사번(employee_id), 이름(first_name), 부서명(department_name), 매니저(manager)의 이름(first_name)을 조회하세요.
+부서가 없는 직원(Kimberely)도 표시합니다.
+(106명)
+*/
+select e.employee_id 사번,
+	   e.first_name 이름,
+       d.department_name 부서명,
+       m.first_name 매니저이름
+from employees e
+left outer join departments d
+			 on e.department_id = d.department_id
+	 inner join employees m
+			 on e.manager_id = m.employee_id
+;
+
+
+
 
