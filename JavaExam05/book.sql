@@ -151,5 +151,12 @@ book에 fk로 사용하고 있기 때문에 데이터가 깨질(?)수 있기 때
     --> author_id가 null이어야 함
 */
 
+select book_id,
+	   title,
+       pubs,
+       pub_date,
+       author_id
+from book
+;
 
 

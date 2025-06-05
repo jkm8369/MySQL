@@ -71,6 +71,9 @@ values(null, '순정만화', '재미주의', '2011-08-03', 5);
 insert into book 
 values(null, '26년', '재미주의', '2012-02-04', 5);
 
+insert into book
+values(null, '국가란 무엇인가', '돌베개', '2011-05-01', 6);
+
 select *
 from book b, author a
 where b.author_id = a.author_id
@@ -117,3 +120,44 @@ delete from author
 where author_id = 8
 ;
 
+select book_id,
+	   title,
+       pubs,
+       pub_date,
+       author_id
+from book
+;
+
+insert into book
+values(null, '', '', '', 1)
+;
+
+delete from book
+where book_id = 1
+;
+
+update book
+set title = '마지막 잎새',
+	pubs = '드림'
+where book_id = 4
+;
+
+
+select book_id,
+	   title,
+       pubs,
+       pub_date,
+       author_id
+from book
+;
+
+select b.book_id,
+	   b.title,
+       b.pubs,
+       b.pub_date,
+       b.author_id,
+       a.author_name,
+       a.author_desc
+from book b, author a
+where b.author_id = a.author_id
+;
