@@ -105,7 +105,7 @@ where book_id = 1;
 -- 작가 박경리 삭제
 delete from author
 where author_id = 2
-;   -- > 삭제 안됨
+;   -- > 삭제 안됨  작가번호 2번을 책에서 사용하고 있음
 
 -- --------------------------------------
 insert into author
@@ -115,7 +115,7 @@ select *
 from author
 ;
 
--- 삭제 잘됨 작가번호
+-- 삭제 잘됨 작가번호 8번을 책에서 사용하고 있지 않음
 delete from author
 where author_id = 8
 ;
@@ -128,9 +128,7 @@ select book_id,
 from book
 ;
 
-insert into book
-values(null, '', '', '', 1)
-;
+
 
 delete from book
 where book_id = 1
@@ -161,3 +159,4 @@ select b.book_id,
 from book b, author a
 where b.author_id = a.author_id
 ;
+
