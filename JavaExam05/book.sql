@@ -12,7 +12,7 @@ create table author(
 
 -- author 테이블에 데이터 값 넣기
 insert into author
-values(null, '김문열', '경북 영양');
+values(null, '이문열', '경북 영양');
 
 insert into author
 values(null, '박경리', '경상남도 통영');
@@ -154,9 +154,17 @@ book에 fk로 사용하고 있기 때문에 데이터가 깨질(?)수 있기 때
 select book_id,
 	   title,
        pubs,
-       pub_date,
+       date_format(pub_date, '%Y-%m-%d') as pub_date,
        author_id
 from book
 ;
 
+drop table book;
 
+drop table author;
+
+select * from book;
+
+select * from author;
+
+show tables;
